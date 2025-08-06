@@ -1,4 +1,4 @@
 import "./styles.css";
-import { greeting } from "./greeting.js";
+import { fetchAPIs } from "./api-fetching";
 
-console.log(greeting);
+console.log(fetchAPIs);
