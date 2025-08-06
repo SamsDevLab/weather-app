@@ -1,1 +1,1 @@
-export const greeting = "Dankman";
+export const fetchAPIs = "Dankman";
