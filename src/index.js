@@ -1,4 +1,2 @@
 import "./styles.css";
-import { fetchAPIs } from "./api-fetching";
-
-console.log(fetchAPIs);
+import { fetchWeatherData } from "./fetch-weather-data";
