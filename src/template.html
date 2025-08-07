@@ -3,11 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App by Sam's Dev Lab</title>
   </head>
   <body>
-    <label for="search-location">Enter Location:</label>
-    <input type="search" id="search-location" data-element="search-bar" />
-    <button type="submit" data-element="submit-button">Search</button>
+    <div id="search-div">
+      <input
+        type="search"
+        id="search-location"
+        placeholder="Search city, address, or zip code"
+        data-element="search-bar"
+      />
+      <button type="submit" data-element="submit-button">Search</button>
+    </div>
+
+    <div id="main-container">
+      <div class="container-div primary-conditions">
+        <div id="location-condition-div">
+          <h2>Paducah, KY</h2>
+          <h3>Conditions</h3>
+        </div>
+        <img src="./sun.jpg" alt="Sun Image" />
+        <h3>30°</h3>
+      </div>
+
+      <div class="container-div secondary-conditions-div">
+        <div class="secondary-condition">
+          <h3>Feels Like</h3>
+          <h4>101</h4>
+        </div>
+        <div class="secondary-condition">
+          <h3>Humidity</h3>
+          <h4>30%</h4>
+        </div>
+        <div class="secondary-condition">
+          <h3>Precipitation</h3>
+          <h4>0.08 inches</h4>
+        </div>
+        <div class="secondary-condition">
+          <h3>Windspeed</h3>
+          <h4>8 mph</h4>
+        </div>
+      </div>
+
+      <div class="container-div forecast-container">
+        <h3>7-Day Forecast</h3>
+
+        <div class="forecast-div">
+          <h4>Today</h4>
+          <!-- <img src="" alt="" /> -->
+          <h4>Sunny</h4>
+          <h4></h4>
+          <h4>70°/60°</h4>
+        </div>
+        <div class="forecast-div">
+          <h4>Friday</h4>
+          <!-- <img src="" alt="" /> -->
+          <h4>Sunny</h4>
+          <h4>85°/72°</h4>
+        </div>
+        <div class="forecast-div">
+          <h4>Saturday</h4>
+          <!-- <img src="" alt="" /> -->
+          <h4>Cloudy</h4>
+          <h4>99°/90°</h4>
+        </div>
+        <div class="forecast-div">
+          <h4>Sunday</h4>
+          <!-- <img src="" alt="" /> -->
+          <h4>Rainy</h4>
+          <h4>101°/95°</h4>
+        </div>
+        <div class="forecast-div">
+          <h4>Monday</h4>
+          <!-- <img src="" alt="" /> -->
+          <h4>Thunderstorm</h4>
+          <h4>55°/42°</h4>
+        </div>
+        <div class="forecast-div">
+          <h4>Tuesday</h4>
+          <!-- <img src="" alt="" /> -->
+          <h4>Sunny</h4>
+          <h4>63°/50°</h4>
+        </div>
+        <div class="forecast-div">
+          <h4>Wednesday</h4>
+          <!-- <img src="" alt="" /> -->
+          <h4>Cloudy</h4>
+          <h4>35°/20°</h4>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
