@@ -2,17 +2,26 @@ export const processWeatherData = () => {
   const extractRelevantData = (data) => {
     const daysArr = data.days;
     const newDaysArr = [];
+    const daysOfWeek = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
 
     for (let i = 0; i < daysArr.length; i++) {
       if (i > 6) {
         break;
       } else {
+        // Forecast Days
+        const timestamp = daysArr[i].datetimeEpoch;
+        const dateFromEpoch = new Date(timestamp * 1000); //
+        const day = dateFromEpoch.getDay();
+
+        // Icons
+
         const dayObj = {
-          datetime: daysArr[i].datetime,
+          dayOfWeek: daysOfWeek[day],
           icon: daysArr[i].icon,
           tempmax: daysArr[i].tempmax,
           tempmin: daysArr[i].tempmin,
         };
+        // console.log(dayObj);
         newDaysArr.push(dayObj);
       }
     }
@@ -23,7 +32,7 @@ export const processWeatherData = () => {
       feelsLike: data.currentConditions.feelslike,
       forecast: newDaysArr,
       humidity: data.currentConditions.humidity,
-      // icon: data.currentConditions.icon,
+      icon: data.currentConditions.icon,
       precipitation: data.currentConditions.precip,
       temperature: data.currentConditions.temp,
       windspeed: data.currentConditions.windspeed,
