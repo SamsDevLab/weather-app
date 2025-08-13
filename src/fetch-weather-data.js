@@ -1,6 +1,5 @@
-import { processWeatherData } from "./index.js";
+import { extractRelevantData } from "./index.js";
 import { dom } from "./index.js";
-const processApiRequest = processWeatherData();
 
 export const fetchWeatherData = () => {
   const submitButton = document.querySelector(
@@ -19,8 +18,7 @@ export const fetchWeatherData = () => {
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${currentSearchValue}/?key=3B8FBG4CPX75RAUWW5MAZMZCF`,
       );
       const data = await response.json();
-      const extractedDataObj = processApiRequest.extractRelevantData(data);
-      dom(extractedDataObj);
+      extractRelevantData(data);
     } catch (error) {
       console.log("You suck, bruh!", error);
     }
