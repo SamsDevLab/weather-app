@@ -24,5 +24,8 @@ export const fetchWeatherData = () => {
       console.log("You suck, bruh!", error);
     }
   }
+
+  queryWeatherAPI("Nashville, TN");
 };
+
 fetchWeatherData();
