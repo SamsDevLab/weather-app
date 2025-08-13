@@ -1,5 +1,3 @@
-import { dom } from "./index.js";
-
 export const extractRelevantData = (data) => {
   // console.log(data);
   const daysOfWeek = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -16,6 +14,12 @@ export const extractRelevantData = (data) => {
     const dayOfWeek = daysOfWeek[day];
 
     return dayOfWeek;
+  };
+
+  const getCondition = (date) => {
+    const conditions = date.conditions;
+
+    return conditions;
   };
 
   const getTempMax = (date) => {
@@ -44,12 +48,14 @@ export const extractRelevantData = (data) => {
     for (let i = 0; i < daysArr.length; i++) {
       const dayOfWeek = getDayOfWeek(daysArr[i]);
       const forecastIcon = await imgPath.getSvg(daysArr[i].icon);
+      const conditions = getCondition(daysArr[i]);
       const tempmax = getTempMax(daysArr[i]);
       const tempmin = getTempMin(daysArr[i]);
 
       const dayObj = {
         dayOfWeek,
         forecastIcon,
+        conditions,
         tempmax,
         tempmin,
       };
@@ -90,7 +96,7 @@ export const extractRelevantData = (data) => {
     }
   }
 
-  const extractedObj = extractDataObj(); //.then((obj) => )
+  const extractedObj = extractDataObj();
 
   return extractedObj;
 };
