@@ -1,7 +1,7 @@
 import { dom } from "./index.js";
 
 export const extractRelevantData = (data) => {
-  console.log(data);
+  // console.log(data);
   const daysOfWeek = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
   const daysArr = data.days;
   daysArr.splice(7, 8);
@@ -84,13 +84,15 @@ export const extractRelevantData = (data) => {
       await buildForecastObjs();
       await getIconImage();
       const dataObj = getDataObj();
-      dom(dataObj);
+      return dataObj;
     } catch (error) {
       console.log("Cannot complete dataObj", error);
     }
   }
 
-  extractDataObj();
+  const extractedObj = extractDataObj(); //.then((obj) => )
+
+  return extractedObj;
 };
 
 // For Commit: added 'temperature', removed 'description' (as I already have 'conditions')
