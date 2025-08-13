@@ -202,3 +202,8 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+
+.forecast-img {
+  height: 5rem;
+  width: 7rem;
+}
