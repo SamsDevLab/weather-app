@@ -18,7 +18,8 @@ export const fetchWeatherData = () => {
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${currentSearchValue}/?key=3B8FBG4CPX75RAUWW5MAZMZCF`,
       );
       const data = await response.json();
-      extractRelevantData(data);
+      const extractedDataObj = extractRelevantData(data);
+      extractedDataObj.then((obj) => dom(obj));
     } catch (error) {
       console.log("You suck, bruh!", error);
     }
